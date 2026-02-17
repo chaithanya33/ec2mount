@@ -1,4 +1,4 @@
-1️⃣ lsblk
+# 1️⃣ lsblk
 What it does
 
 Lists all block devices attached to the system.
@@ -19,7 +19,7 @@ To identify the new disk you want to format and mount.
 
 nvme1n1   259:0    0   50G  0 disk
 
-2️⃣ sudo mkfs -t ext4 /dev/nvme1n1
+# 2️⃣ sudo mkfs -t ext4 /dev/nvme1n1
 What it does
 
 Formats the disk
@@ -34,11 +34,11 @@ Creates inode tables
 
 Prepares disk for file storage
 
-⚠️ Data on the disk is erased
+# ⚠️ Data on the disk is erased
 
 ��� ext4 = most common Linux filesystem
 
-3️⃣ sudo mkdir /data
+# 3️⃣ sudo mkdir /data
 What it does
 
 Creates a directory /data
@@ -47,7 +47,7 @@ Why needed
 
 Linux mounts disks on directories, not drive letters.
 
-4️⃣ sudo mount /dev/nvme1n1 /data
+# 4️⃣ sudo mount /dev/nvme1n1 /data
 What it does
 
 Attaches the disk /dev/nvme1n1
@@ -60,7 +60,7 @@ Files written to /data go to this disk.
 
 ��� This mount is temporary (lost after reboot)
 
-5️⃣ df -h
+# 5️⃣ df -h
 What it does
 
 Shows disk usage
@@ -75,7 +75,7 @@ Disk is mounted
 
 Size & available space
 
-6️⃣ sudo nano /etc/fstab
+# 6️⃣ sudo nano /etc/fstab
 What it does
 
 Opens the filesystem table
@@ -84,7 +84,7 @@ Purpose
 
 To make the mount permanent across reboots.
 
-7️⃣ sudo blkid
+# 7️⃣ sudo blkid
 What it does
 
 Shows:
@@ -100,7 +100,7 @@ Example:
 
 ��� UUID is safer than device name.
 
-8️⃣ sudo nano /etc/fstab
+# 8️⃣ sudo nano /etc/fstab
 What you add inside
 UUID=a1b2c3   /data   ext4   defaults,nofail   0   2
 
@@ -110,7 +110,7 @@ Auto-mounts disk at boot
 
 Prevents boot failure if disk is missing
 
-9️⃣ sudo mkdir -p /data
+# 9️⃣ sudo mkdir -p /data
 What it does
 
 Ensures mount directory exists
