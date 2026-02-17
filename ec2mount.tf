@@ -1,4 +1,4 @@
-[200~1ï¸âƒ£ lsblk
+1ï¸âƒ£ lsblk
 What it does
 
 Lists all block devices attached to the system.
@@ -15,7 +15,7 @@ Why you ran it
 
 To identify the new disk you want to format and mount.
 
-í³Œ Example:
+ï¿½ï¿½ï¿½ Example:
 
 nvme1n1   259:0    0   50G  0 disk
 
@@ -36,7 +36,7 @@ Prepares disk for file storage
 
 âš ï¸ Data on the disk is erased
 
-í³Œ ext4 = most common Linux filesystem
+ï¿½ï¿½ï¿½ ext4 = most common Linux filesystem
 
 3ï¸âƒ£ sudo mkdir /data
 What it does
@@ -58,7 +58,7 @@ Result
 
 Files written to /data go to this disk.
 
-í³Œ This mount is temporary (lost after reboot)
+ï¿½ï¿½ï¿½ This mount is temporary (lost after reboot)
 
 5ï¸âƒ£ df -h
 What it does
@@ -98,7 +98,7 @@ Example:
 /dev/nvme1n1: UUID="a1b2c3" TYPE="ext4"
 
 
-í³Œ UUID is safer than device name.
+ï¿½ï¿½ï¿½ UUID is safer than device name.
 
 8ï¸âƒ£ sudo nano /etc/fstab
 What you add inside
@@ -117,7 +117,7 @@ Ensures mount directory exists
 
 -p prevents error if already exists
 
-í´Ÿ sudo mount -a
+ï¿½ï¿½ï¿½ sudo mount -a
 What it does
 
 Mounts everything in /etc/fstab
@@ -141,12 +141,12 @@ Space is available
 
 Permanent mount works
 
-í·  Overall Flow (Big Picture)
+ï¿½ï¿½ï¿½ Overall Flow (Big Picture)
 Detect disk â†’ Format â†’ Create mount point
 â†’ Temporary mount â†’ Verify
 â†’ Get UUID â†’ Permanent config
 â†’ Test mount â†’ Verify again
 
-í³ Interview-Ready Summary
+ï¿½ï¿½ï¿½ Interview-Ready Summary
 
 These commands detect a new disk, format it with an ext4 filesystem, mount it to /data, verify the mount, and configure /etc/fstab so the disk is automatically mounted on every reboot.
